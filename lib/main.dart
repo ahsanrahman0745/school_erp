@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school_erp/utill/colors_picker.dart';
+import 'package:school_erp/views/welcome/home_screen.dart';
 import 'package:school_erp/views/welcome/splesh_screen.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primeryColor),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }

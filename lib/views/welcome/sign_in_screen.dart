@@ -27,8 +27,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 margin: EdgeInsets.only(top: 30,left: 90) ,
                 child: Image(
                   height: 210,
-                  width: size.width*6,
-                  image: AssetImage(UtilsImage.SPLESH_SCREEN_BOTTOM_IMAGE),
+                  width: size.width*5,
+                  image: AssetImage(UtilsImage.SPLESH_SCREEN_BOTTOM_IMAGE_WITHOUT_CIRCULE),
                   fit: BoxFit.fill,
                 ),
 
