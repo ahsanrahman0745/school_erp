@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:school_erp/utill/utils_image.dart';
+import 'package:school_erp/views/welcome/sign_in_screen.dart';
 
 import '../../utill/colors_picker.dart';
 
-class SpleshScreen extends StatelessWidget {
-  const SpleshScreen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    moveToNextScreen(context: context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,4 +40,16 @@ class SpleshScreen extends StatelessWidget {
       ),
     ));
   }
+
+  Future<void> moveToNextScreen({required BuildContext context}) async {
+    await Future.delayed(Duration(seconds: 1));
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SignInScreen()),
+    );
+
+  }
 }
+
+
+
