@@ -23,22 +23,30 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
-      backgroundColor: primeryColor,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5.0,horizontal: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 80.0),
-              child: Image.asset(UtilsImage.SPLESH_SCREEN_LOGO),
-            ),
-            Image.asset(UtilsImage.SPLESH_SCREEN_BOTTOM_IMAGE),
-          ],
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            primeryColor,primeryColor2,Colors.blue
+          ]
+        )
+      ),
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5.0,horizontal: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 80.0),
+                child: Image.asset(UtilsImage.SPLESH_SCREEN_LOGO),
+              ),
+              Image.asset(UtilsImage.SPLESH_SCREEN_BOTTOM_IMAGE),
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 
   Future<void> moveToNextScreen({required BuildContext context}) async {
