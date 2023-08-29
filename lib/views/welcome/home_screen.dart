@@ -12,6 +12,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  var myGridList = [
+    {
+      "icon": UtilsImage.ICON_QUIZ,
+      "title": "Play Quiz",
+    },
+    {
+      "icon": UtilsImage.ICON_ASSIGMEMNT,
+      "title": "Assignment",
+    },
+
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -78,13 +92,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         radius: 40,
                         backgroundColor: Colors.transparent,
                         // sets background color, default Colors.white
-                        borderWidth: 10,
+                        borderWidth: 1,
                         // sets border, default 0.0
-                        borderColor: primeryColor2,
+                        borderColor: Colors.white,
                         // sets border color, default Colors.white
                         elevation: 5.0,
-                        // sets elevation (shadow of the profile picture), default value is 0.0
-                        foregroundColor: primeryColor2.withOpacity(0.5),
                         //sets foreground colour, it works if showInitialTextAbovePicture = true , default Colors.transparent
                         cacheImage: true,
                         // allow widget to cache image against provided url
@@ -95,7 +107,45 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Positioned(
-                    top: size.height * 0.26,
+                    bottom: 0,
+                    top: size.height * 0.35,
+                    right: 0,
+                    left: 0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25)),
+                      child: Expanded(
+                        child: GridView.builder(
+                          padding: EdgeInsets.only(top: size.height * 0.14,left: size.width * 0.03,right: size.width * 0.03,),
+                          shrinkWrap: true,
+                            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 200,
+                                childAspectRatio: 3 / 2,
+                                crossAxisSpacing: 20,
+                                mainAxisSpacing: 20),
+                            itemCount: myGridList.length,
+                            itemBuilder: (BuildContext ctx, index) {
+                              return Container(
+                                padding: EdgeInsets.all(15),
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFF5F6FC),
+                                    border: Border.all(width: 0.03,color: primeryColor),
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset("${myGridList[index]["icon"]}"),
+                                    SizedBox(height: 20,),
+                                    Text("${myGridList[index]["title"]}",style: MyTestStyle.test14Black,)
+                                  ],
+                                ),
+                              );
+                            }),
+                      ),
+                    )),
+                Positioned(
+                    top: size.height * 0.27,
                     right: size.width * 0.03,
                     left: size.width * 0.03,
                     child: Row(
@@ -104,37 +154,63 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(25),
+                                borderRadius: BorderRadius.only(topRight: Radius.circular(25),topLeft: Radius.circular(25)),
                                 border:
-                                    Border.all(width: 0.03, color: primeryColor)),
+                                    Border.all(width: 1, color: primeryColor)),
                             height: size.height * 0.2,
                             width: size.width * 0.5,
-
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment:CrossAxisAlignment.start,
-
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                              Image.asset(UtilsImage.ICON_ATTENDES),
-                            ],),
-                          ),
+                                  Image.asset(UtilsImage.ICON_ATTENDES),
+                                  Text(
+                                    "80.39 %",
+                                    style: MyTestStyle.test30BoldBlack,
+                                  ),
+                                  Text(
+                                    "Attendance",
+                                    style: MyTestStyle.test14Black38,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Expanded(
                           child: Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.asset(UtilsImage.ICON_FEE),
+                                  Text(
+                                    "6400 RS",
+                                    style: MyTestStyle.test30BoldBlack,
+                                  ),
+                                  Text(
+                                    "Fees Due",
+                                    style: MyTestStyle.test14Black38,
+                                  ),
+                                ],
+                              ),
+                            ),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(25),
                                 border:
-                                Border.all(width: 0.03, color: primeryColor)),
+                                    Border.all(width: 1, color: primeryColor)),
                             height: size.height * 0.2,
                             width: size.width * 0.5,
                           ),
                         )
                       ],
-                    ))
+                    )),
               ],
             ),
           ),

@@ -6,6 +6,14 @@ import 'colors_picker.dart';
 
 class MyTestStyle{
 
+  /// 30
+  static TextStyle test30BoldBlack = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+
   /// 24
   static TextStyle test24White = TextStyle(
     fontSize: 24,
@@ -151,6 +159,10 @@ class MyTestStyle{
   static TextStyle test14Black = TextStyle(
     fontSize: 14,
     color: Colors.black,
+  );
+  static TextStyle test14Black38 = TextStyle(
+    fontSize: 14,
+    color: Colors.black38,
   );
 
   static TextStyle test14BoldPimery = TextStyle(

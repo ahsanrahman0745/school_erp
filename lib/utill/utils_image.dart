@@ -10,5 +10,10 @@ class UtilsImage {
 
 
   static final String ICON_ATTENDES = "asset/png/ic_attendance.png";
-  static final String ICON_FEE = "asset/png/Ellipse_12-2.png";
+  static final String ICON_FEE = "asset/png/ic_fees_due.png";
+
+
+
+  static final String ICON_QUIZ = "asset/png/ic_quiz.png";
+  static final String ICON_ASSIGMEMNT = "asset/png/ic_assignment.png";
 }
