@@ -22,6 +22,48 @@ class _HomeScreenState extends State<HomeScreen> {
       "icon": UtilsImage.ICON_ASSIGMEMNT,
       "title": "Assignment",
     },
+    {
+      "icon": UtilsImage.ICON_HOLIDAY,
+      "title": "School Holiday",
+    },
+    {
+      "icon": UtilsImage.ICON_TIME_TABLE,
+      "title": "Time Table",
+    },
+    {
+      "icon": UtilsImage.ICON_RESULT,
+      "title": "Result",
+    },
+    {
+      "icon": UtilsImage.ICON_DATE_SHEET,
+      "title": "Date Sheet",
+    },
+
+
+    {
+      "icon": UtilsImage.ICON_DOUBTS,
+      "title": "Ask Doubts",
+    },
+    {
+      "icon": UtilsImage.ICON_GALLERY,
+      "title": "School Gallery",
+    },
+    {
+      "icon": UtilsImage.ICON_LEAVE,
+      "title": "Leave Application",
+    },
+    {
+      "icon": UtilsImage.ICON_PASSWORD,
+      "title": "Change Password",
+    },
+    {
+      "icon": UtilsImage.ICON_ENVENT,
+      "title": "Events",
+    },
+    {
+      "icon": UtilsImage.ICON_LOGOUT,
+      "title": "Logout",
+    },
 
   ];
 
@@ -114,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(25)),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25))),
                       child: Expanded(
                         child: GridView.builder(
                           padding: EdgeInsets.only(top: size.height * 0.14,left: size.width * 0.03,right: size.width * 0.03,),
@@ -154,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.only(topRight: Radius.circular(25),topLeft: Radius.circular(25)),
+                                borderRadius: BorderRadius.circular(25),
                                 border:
                                     Border.all(width: 1, color: primeryColor)),
                             height: size.height * 0.2,
