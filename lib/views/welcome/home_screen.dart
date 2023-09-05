@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:school_erp/utill/MyTestStyle.dart';
 import 'package:school_erp/utill/colors_picker.dart';
 import 'package:school_erp/utill/utils_image.dart';
+import 'package:school_erp/views/my_profile/my_profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -129,6 +130,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Spacer(),
                       CircularProfileAvatar(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MyProfileScreen()),
+                          );
+                        },
                         'https://cdn-icons-png.flaticon.com/512/4086/4086679.png',
                         //sets image path, it should be a URL string. default value is empty string, if path is empty it will display only initials
                         radius: 40,

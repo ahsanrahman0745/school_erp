@@ -137,7 +137,7 @@ class MyTestStyle{
     color: primeryColor,
   );
 
-  /// 14
+  /// 14 test14BoldPimerys2
   static TextStyle test14White = TextStyle(
     fontSize: 14,
     color: Colors.white,
@@ -145,6 +145,10 @@ class MyTestStyle{
   static TextStyle test14White70 = TextStyle(
     fontSize: 14,
     color: Colors.white70,
+  );
+  static TextStyle test14Grey = TextStyle(
+    fontSize: 14,
+    color: Colors.grey,
   );
   static TextStyle test14BoldWhite = TextStyle(
     fontSize: 14,
@@ -173,6 +177,10 @@ class MyTestStyle{
   static TextStyle test14Pimery = TextStyle(
     fontSize: 14,
     color: primeryColor,
+  );
+  static TextStyle test14Pimery2 = TextStyle(
+    fontSize: 14,
+    color: primeryColor2,
   );
 
 
