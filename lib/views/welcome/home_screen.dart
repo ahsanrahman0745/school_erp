@@ -5,6 +5,8 @@ import 'package:school_erp/utill/colors_picker.dart';
 import 'package:school_erp/utill/utils_image.dart';
 import 'package:school_erp/views/my_profile/my_profile.dart';
 
+import '../attendenc/attence.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -197,68 +199,77 @@ class _HomeScreenState extends State<HomeScreen> {
                     top: size.height * 0.27,
                     right: size.width * 0.03,
                     left: size.width * 0.03,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(25),
-                                border:
-                                    Border.all(width: 1, color: primeryColor)),
-                            height: size.height * 0.2,
-                            width: size.width * 0.5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(UtilsImage.ICON_ATTENDES),
-                                  Text(
-                                    "80.39 %",
-                                    style: MyTestStyle.test30BoldBlack,
-                                  ),
-                                  Text(
-                                    "Attendance",
-                                    style: MyTestStyle.test14Black38,
-                                  ),
-                                ],
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => StudenceAttendence()),
+                        );
+
+                      },
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(25),
+                                  border:
+                                      Border.all(width: 1, color: primeryColor)),
+                              height: size.height * 0.2,
+                              width: size.width * 0.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset(UtilsImage.ICON_ATTENDES),
+                                    Text(
+                                      "80.39 %",
+                                      style: MyTestStyle.test30BoldBlack,
+                                    ),
+                                    Text(
+                                      "Attendance",
+                                      style: MyTestStyle.test14Black38,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: Container(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(UtilsImage.ICON_FEE),
-                                  Text(
-                                    "6400 RS",
-                                    style: MyTestStyle.test30BoldBlack,
-                                  ),
-                                  Text(
-                                    "Fees Due",
-                                    style: MyTestStyle.test14Black38,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(25),
-                                border:
-                                    Border.all(width: 1, color: primeryColor)),
-                            height: size.height * 0.2,
-                            width: size.width * 0.5,
+                          SizedBox(
+                            width: 10,
                           ),
-                        )
-                      ],
+                          Expanded(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset(UtilsImage.ICON_FEE),
+                                    Text(
+                                      "6400 RS",
+                                      style: MyTestStyle.test30BoldBlack,
+                                    ),
+                                    Text(
+                                      "Fees Due",
+                                      style: MyTestStyle.test14Black38,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(25),
+                                  border:
+                                      Border.all(width: 1, color: primeryColor)),
+                              height: size.height * 0.2,
+                              width: size.width * 0.5,
+                            ),
+                          )
+                        ],
+                      ),
                     )),
               ],
             ),

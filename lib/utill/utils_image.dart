@@ -27,6 +27,9 @@ class UtilsImage {
   static final String ICON_LOGOUT = "asset/png/ic_logout.png";
 
 
+  static final String CLENDER_IMAGE = "asset/png/vector.png";
+
+
   static final String ICON_QUIZ = "asset/png/ic_quiz.png";
   static final String ICON_ASSIGMEMNT = "asset/png/ic_assignment.png";
 }

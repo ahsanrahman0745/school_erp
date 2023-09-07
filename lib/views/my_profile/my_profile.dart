@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:school_erp/utill/MyTestStyle.dart';
 import '../../utill/colors_picker.dart';
 import '../../utill/utils_image.dart';
+import '../commen/my_text_feild.dart';
 
 class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({super.key});
@@ -133,7 +134,74 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                   Icon(CupertinoIcons.camera)
                                 ],
                               ),
+                            ),
+
+                            Container(
+                              child: Column(
+                                children: [
+                                 Row(
+                                   children: [
+                                     Expanded(
+                                         flex: 1,
+                                         child: MyTestField(hintTitle: 'Adhar No', hintStyle: MyTestStyle.test14Grey,)),
+                                     SizedBox(width: 10,),
+                                     Expanded(
+                                         flex: 1,
+                                         child: MyTestField(hintTitle: 'Academic Year',hintStyle: MyTestStyle.test14Grey)),
+                                   ],
+                                 ),
+                                 Row(
+                                   children: [
+                                     Expanded(
+                                         flex: 1,
+                                         child: MyTestField(
+                                           icon: Icon(Icons.lock,color: Colors.grey,),
+                                           hintTitle: 'Admission Class', hintStyle: MyTestStyle.test14Grey,)),
+                                     SizedBox(width: 10,),
+                                     Expanded(
+                                         flex: 1,
+                                         child: MyTestField(
+                                             icon: Icon(Icons.lock,color: Colors.grey,),
+                                             hintTitle: 'Old Admission No',hintStyle: MyTestStyle.test14Grey)),
+                                   ],
+                                 ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                          flex: 1,
+                                          child: MyTestField(
+                                            icon: Icon(Icons.lock,color: Colors.grey,),
+                                            hintTitle: 'Date of Admission', hintStyle: MyTestStyle.test14Grey,)),
+                                      SizedBox(width: 10,),
+                                      Expanded(
+                                          flex: 1,
+                                          child: MyTestField(
+                                              icon: Icon(Icons.lock,color: Colors.grey,),
+                                              hintTitle: 'Date of Birth',hintStyle: MyTestStyle.test14Grey)),
+                                    ],
+                                  ),
+                                  MyTestField(
+                                      icon: Icon(Icons.lock,color: Colors.grey,),
+                                      hintTitle: 'Parent Mail ID',hintStyle: MyTestStyle.test14Grey),
+                                  MyTestField(
+                                      icon: Icon(Icons.lock,color: Colors.grey,),
+                                      hintTitle: 'Mother Name',hintStyle: MyTestStyle.test14Grey),
+                                  MyTestField(
+                                      icon: Icon(Icons.lock,color: Colors.grey,),
+                                      hintTitle: 'Father Name',hintStyle: MyTestStyle.test14Grey),
+                                  MyTestField(
+                                      icon: Icon(Icons.lock,color: Colors.grey,),
+                                      hintTitle: 'Permanent Address',hintStyle: MyTestStyle.test14Grey),
+
+                                  MyTestField(
+                                      icon: Icon(Icons.lock,color: Colors.grey,),
+                                      hintTitle: 'Permanent Address',hintStyle: MyTestStyle.test14Grey),
+
+
+                                ],
+                              ),
                             )
+
 
 
 
