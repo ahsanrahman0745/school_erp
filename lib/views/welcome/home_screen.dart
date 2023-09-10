@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:school_erp/utill/MyTestStyle.dart';
 import 'package:school_erp/utill/colors_picker.dart';
 import 'package:school_erp/utill/utils_image.dart';
+import 'package:school_erp/views/due_fee/student_fee.dart';
 import 'package:school_erp/views/my_profile/my_profile.dart';
+import 'package:school_erp/views/play%20quiz/play_quiz.dart';
 
 import '../attendenc/attence.dart';
 
@@ -172,24 +174,34 @@ class _HomeScreenState extends State<HomeScreen> {
                           shrinkWrap: true,
                             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                                 maxCrossAxisExtent: 200,
-                                childAspectRatio: 3 / 2,
+                                childAspectRatio: 0.999,
                                 crossAxisSpacing: 20,
                                 mainAxisSpacing: 20),
                             itemCount: myGridList.length,
                             itemBuilder: (BuildContext ctx, index) {
-                              return Container(
-                                padding: EdgeInsets.all(15),
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFF5F6FC),
-                                    border: Border.all(width: 0.03,color: primeryColor),
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.asset("${myGridList[index]["icon"]}"),
-                                    SizedBox(height: 20,),
-                                    Text("${myGridList[index]["title"]}",style: MyTestStyle.test14Black,)
-                                  ],
+                              return InkWell(
+                                onTap: (){
+                                  if(myGridList[index]["title"]==myGridList[0]["title"]){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PlayQuiz()),
+                                    );
+                                  }
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(15),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xFFF5F6FC),
+                                      border: Border.all(width: 0.03,color: primeryColor),
+                                      borderRadius: BorderRadius.circular(15)),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Image.asset("${myGridList[index]["icon"]}"),
+                                      SizedBox(height: 20,),
+                                      Text("${myGridList[index]["title"]}",style: MyTestStyle.test14Black,)
+                                    ],
+                                  ),
                                 ),
                               );
                             }),
@@ -216,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(25),
                                   border:
                                       Border.all(width: 1, color: primeryColor)),
-                              height: size.height * 0.2,
+                              height: size.height * 0.22,
                               width: size.width * 0.5,
                               child: Padding(
                                 padding: const EdgeInsets.all(10.0),
@@ -241,31 +253,39 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 10,
                           ),
                           Expanded(
-                            child: Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.asset(UtilsImage.ICON_FEE),
-                                    Text(
-                                      "6400 RS",
-                                      style: MyTestStyle.test30BoldBlack,
-                                    ),
-                                    Text(
-                                      "Fees Due",
-                                      style: MyTestStyle.test14Black38,
-                                    ),
-                                  ],
+                            child: InkWell(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => StudentFee()),
+                                );
+                              },
+                              child: Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Image.asset(UtilsImage.ICON_FEE),
+                                      Text(
+                                        "6400 RS",
+                                        style: MyTestStyle.test30BoldBlack,
+                                      ),
+                                      Text(
+                                        "Fees Due",
+                                        style: MyTestStyle.test14Black38,
+                                      ),
+                                    ],
+                                  ),
                                 ),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(25),
+                                    border:
+                                        Border.all(width: 1, color: primeryColor)),
+                                height: size.height * 0.22,
+                                width: size.width * 0.5,
                               ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(25),
-                                  border:
-                                      Border.all(width: 1, color: primeryColor)),
-                              height: size.height * 0.2,
-                              width: size.width * 0.5,
                             ),
                           )
                         ],
