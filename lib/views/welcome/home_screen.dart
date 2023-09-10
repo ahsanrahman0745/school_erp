@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:school_erp/utill/MyTestStyle.dart';
 import 'package:school_erp/utill/colors_picker.dart';
 import 'package:school_erp/utill/utils_image.dart';
+import 'package:school_erp/views/due_fee/student_fee.dart';
 import 'package:school_erp/views/my_profile/my_profile.dart';
 
 import '../attendenc/attence.dart';
@@ -241,31 +242,39 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 10,
                           ),
                           Expanded(
-                            child: Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.asset(UtilsImage.ICON_FEE),
-                                    Text(
-                                      "6400 RS",
-                                      style: MyTestStyle.test30BoldBlack,
-                                    ),
-                                    Text(
-                                      "Fees Due",
-                                      style: MyTestStyle.test14Black38,
-                                    ),
-                                  ],
+                            child: InkWell(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => StudentFee()),
+                                );
+                              },
+                              child: Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Image.asset(UtilsImage.ICON_FEE),
+                                      Text(
+                                        "6400 RS",
+                                        style: MyTestStyle.test30BoldBlack,
+                                      ),
+                                      Text(
+                                        "Fees Due",
+                                        style: MyTestStyle.test14Black38,
+                                      ),
+                                    ],
+                                  ),
                                 ),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(25),
+                                    border:
+                                        Border.all(width: 1, color: primeryColor)),
+                                height: size.height * 0.2,
+                                width: size.width * 0.5,
                               ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(25),
-                                  border:
-                                      Border.all(width: 1, color: primeryColor)),
-                              height: size.height * 0.2,
-                              width: size.width * 0.5,
                             ),
                           )
                         ],

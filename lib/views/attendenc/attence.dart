@@ -16,6 +16,23 @@ class StudenceAttendence extends StatefulWidget {
 class _StudenceAttendenceState extends State<StudenceAttendence> {
   bool attendenc = true, holiday = false;
 
+  List myList=[
+    {
+      "dayTitle": "eid",
+      "date": "10 Nev 2013",
+      "day": "sunday"
+    },
+    {
+      "dayTitle": "eid",
+      "date": "10 Nev 2013",
+      "day": "sunday"
+    },{
+      "dayTitle": "eid",
+      "date": "10 Nev 2013",
+      "day": "sunday"
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Background(
@@ -100,99 +117,150 @@ class _StudenceAttendenceState extends State<StudenceAttendence> {
             child: Container(
               height: double.infinity,
               decoration: MyBoxDecoration.topRightAndLeftCircule,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Stack(
                 children: [
-                  TableCalendar(
-                    firstDay: DateTime.utc(2010, 10, 16),
-                    lastDay: DateTime.utc(2030, 3, 14),
-                    focusedDay: DateTime.now(),
+                  Positioned(
+                      bottom: 0,
+                      child: Image.asset(UtilsImage.CLENDER_IMAGE)),
+
+                  if(attendenc)
+                  Column(
+                    children: [
+                      TableCalendar(
+                        firstDay: DateTime.utc(2010, 10, 16),
+                        lastDay: DateTime.utc(2030, 3, 14),
+                        focusedDay: DateTime.now(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: double.infinity,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 30.0,
+                                  top: 1.0,
+                                  bottom: 1.0,
+                                  right: 1.0,
+                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(10),
+                                          bottomRight: Radius.circular(10))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text("Absent",style: TextStyle(color: Colors.red,fontSize: 14)),
+                                        CircleAvatar(
+                                            radius: 17,
+                                          child: Text("02",style: TextStyle(color: Colors.red,fontSize: 14)),
+                                          backgroundColor: Colors.red.shade100,
+                                        ),
+
+
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20,),
+                            Container(
+                              width: double.infinity,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 30.0,
+                                  top: 1.0,
+                                  bottom: 1.0,
+                                  right: 1.0,
+                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(10),
+                                          bottomRight: Radius.circular(10))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text("Festival  & Holidays",style: TextStyle(color: Colors.green,fontSize: 14)),
+                                        CircleAvatar(
+                                            radius: 17,
+                                          child: Text("02",style: TextStyle(color: Colors.green,fontSize: 14)),
+                                          backgroundColor: Colors.green.shade100,
+                                        ),
+
+
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Column(
+                  if(holiday)
+                    Column(
                       children: [
-                        Container(
-                          width: double.infinity,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 30.0,
-                              top: 1.0,
-                              bottom: 1.0,
-                              right: 1.0,
+                        TableCalendar(
+                          firstDay: DateTime.utc(2010, 10, 16),
+                          lastDay: DateTime.utc(2030, 3, 14),
+                          focusedDay: DateTime.now(),
+                        ),
+                        ListView.separated(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                            shrinkWrap: true,
+                            itemBuilder: (context,index){
+                          return Container(
+                            padding: EdgeInsets.all(15),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                               border: Border.all(width: 2,color: Colors.grey),
+                              borderRadius: BorderRadius.circular(25)
                             ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(10),
-                                      bottomRight: Radius.circular(10))),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Row(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(myList[index]["dayTitle"],style: MyTestStyle.test16BoldBlack,),
+                                SizedBox(height: 15,),
+                                Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text("Absent",style: TextStyle(color: Colors.red,fontSize: 14)),
-                                    CircleAvatar(
-                                        radius: 17,
-                                      child: Text("02",style: TextStyle(color: Colors.red,fontSize: 14)),
-                                      backgroundColor: Colors.red.shade100,
-                                    ),
-
-
+                                    Text(myList[index]["date"],style: MyTestStyle.test14Grey,),
+                                    Text(myList[index]["day"],style: MyTestStyle.test14Grey,),
                                   ],
-                                ),
-                              ),
+                                )
+                              ],
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 20,),
-                        Container(
-                          width: double.infinity,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 30.0,
-                              top: 1.0,
-                              bottom: 1.0,
-                              right: 1.0,
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(10),
-                                      bottomRight: Radius.circular(10))),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("Festival  & Holidays",style: TextStyle(color: Colors.green,fontSize: 14)),
-                                    CircleAvatar(
-                                        radius: 17,
-                                      child: Text("02",style: TextStyle(color: Colors.green,fontSize: 14)),
-                                      backgroundColor: Colors.green.shade100,
-                                    ),
+                          );
+                        }, separatorBuilder: (context,index){
+                          return SizedBox(height: 15,);
+                        },
+                            itemCount: myList.length),
 
-
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
-                  ),
-                  Image.asset(UtilsImage.CLENDER_IMAGE)
+
                 ],
               ),
             ),
