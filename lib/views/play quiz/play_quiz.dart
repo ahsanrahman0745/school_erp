@@ -73,22 +73,161 @@ class _PlayQuizState extends State<PlayQuiz> {
               SizedBox(height: 4,),
               Divider(),
 
-              Column(
+              
+
+                  
+
+              Stack(
+                alignment: Alignment.topCenter,
                 children: [
                   Container(
-                      padding: EdgeInsets.all(15),
-                    child: Text("In 2017, which player became the leading run scorer of all tie in women's ODI cricket?",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                     margin: EdgeInsets.only(top: 5),
-                     width: 315,
-                     height: 430,
-                     decoration: BoxDecoration(
-                     color: Colors.white,
-                     borderRadius: BorderRadius.all( Radius.circular(25),),),
+                    margin: EdgeInsets.only(top: 10),
+                    width: 250,
+                    height: 445,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.3),
+                      borderRadius: BorderRadius.all( Radius.circular(13),),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    width: 275,
+                    height: 437,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.4),
+                      borderRadius: BorderRadius.all( Radius.circular(15),),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 5),
+                    width: 315,
+                    height: 430,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all( Radius.circular(20),),),
+                    padding: EdgeInsets.all(15),
+                    child: Column(
+                      children: [
+                        Text("In 2017, which player became the leading run scorer of all tie in women's ODI cricket?",
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                        SizedBox(height: 28,),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.white,
+                              border: Border.all(color: Colors.grey)
+                          ),
+
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "A. Ahmad",
+                                style: TextStyle(color: Colors.grey, fontSize: 12),
+                              ),
+
+                              CircleAvatar(
+                                radius: 12,
+                                backgroundColor: Colors.grey,
+                                child: CircleAvatar(
+                                  radius: 10,
+                                  backgroundColor: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(height:15 ,),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.green.shade50,
+                              border: Border.all(color: Colors.green)
+                          ),
+
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "B. Usman",
+                                style: TextStyle(color: Colors.green, fontSize: 12),
+                              ),
+
+                              CircleAvatar(
+                                radius: 12,
+                                backgroundColor: Colors.green,
+                                child: Icon(Icons.done, color: Colors.white, size: 17,),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(height:15 ,),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.red.shade50,
+                              border: Border.all(color: Colors.red)
+                          ),
+
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "C. Ali",
+                                style: TextStyle(color: Colors.red, fontSize: 12),
+                              ),
+
+                              CircleAvatar(
+                                radius: 12,
+                                backgroundColor: Colors.red,
+                                child: Icon(Icons.close_rounded, color: Colors.white, size: 17,),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(height:15 ,),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.white,
+                              border: Border.all(color: Colors.grey)
+                          ),
+
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "D. Nauman",
+                                style: TextStyle(color: Colors.grey, fontSize: 12),
+                              ),
+
+                              CircleAvatar(
+                                radius: 12,
+                                backgroundColor: Colors.grey,
+                                child: CircleAvatar(
+                                  radius: 10,
+                                  backgroundColor: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+
+
+
+
+                      ],
+                    ),
+
+
 
                   ),
                 ],
-              )
+              ),
+
+              
             ])
     );
   }
