@@ -31,12 +31,32 @@ class _AssignmentState extends State<Assignment> {
              ],
            ),
          ),
-          Container(
-           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-             color: Colors.white
-           ),
-        )
+          SizedBox(height: 35,),
+          Expanded(
+            child: Container( height: double.infinity, width:double.infinity ,
+             decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(35), topRight: Radius.circular(35)),
+               color: Colors.white
+             ),
+              child: Column(
+                children: [
+                  Container(padding: EdgeInsets.only(top: 20, right: 230, left: 30,),
+                    child: Column(
+                      children: [SizedBox(height: 15,),
+                            Container(
+                              padding:EdgeInsets.all(5),
+                              decoration:BoxDecoration(borderRadius: BorderRadius.circular(20),
+                              color: Color(0xFFE6EFFF),),
+                              child: Text("Mathematics", style: TextStyle(color: Colors.blueAccent,
+                              fontSize:16),),
+                            ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
       ],
     )
 
