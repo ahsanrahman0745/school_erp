@@ -16,6 +16,7 @@ class UtilsImage {
 
   static final String ICON_CALENDER = "asset/png/ic_calendra.png";
   static final String ICON_DATE_SHEET = "asset/png/ic_date_sheet.png";
+  static final String ICON_LUNCH = "asset/png/lunch.jpeg";
   static final String ICON_DOUBTS = "asset/png/ic_doubts.png";
   static final String ICON_ENVENT = "asset/png/ic_event.png";
   static final String ICON_GALLERY = "asset/png/ic_gallery.png";

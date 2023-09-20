@@ -9,6 +9,7 @@ import 'package:school_erp/views/my_profile/my_profile.dart';
 import 'package:school_erp/views/play%20quiz/play_quiz.dart';
 
 import '../attendenc/attence.dart';
+import '../time_table/time_table.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -188,12 +189,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                       MaterialPageRoute(builder: (context) => PlayQuiz()),
                                     );
 
-                                  } else   if(myGridList[index]["title"]==myGridList[1]["title"]){
+                                  }
+                                  else   if(myGridList[index]["title"]==myGridList[1]["title"]){
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(builder: (context) => Assignment()),
                                     );
-
+                                  }
+                                  else if(myGridList[index]["title"]==myGridList[3]["title"]){
+                                    Navigator.push(context,
+                                    MaterialPageRoute(builder: (context)=> TimeTable()),
+                                    );
                                   }
                                 },
                                 child: Container(
