@@ -14,6 +14,7 @@ class UtilsImage {
 
 
 
+
   static final String ICON_CALENDER = "asset/png/ic_calendra.png";
   static final String ICON_DATE_SHEET = "asset/png/ic_date_sheet.png";
   static final String ICON_LUNCH = "asset/png/lunch.jpeg";
@@ -26,6 +27,10 @@ class UtilsImage {
   static final String ICON_TIME_TABLE = "asset/png/Path_176.png";
   static final String ICON_RESULT = "asset/png/ic_results.png";
   static final String ICON_LOGOUT = "asset/png/ic_logout.png";
+  static final String GRADE_PERC = "asset/png/Grade_Pertange.png";
+  static final String TOP_BACK = "asset/png/top.jpeg";
+  static final String VECTOR = "asset/png/Vector.png";
+  static final String BOTTOM = "asset/png/bottom.png";
 
 
   static final String CLENDER_IMAGE = "asset/png/vector.png";

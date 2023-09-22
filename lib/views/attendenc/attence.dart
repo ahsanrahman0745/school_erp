@@ -215,7 +215,7 @@ class _StudenceAttendenceState extends State<StudenceAttendence> {
                           ],
                         ),
                       ),
-
+                     // Image.asset(UtilsImage.BOTTOM),
                     ],
                   ),
                   if(holiday)
@@ -257,8 +257,9 @@ class _StudenceAttendenceState extends State<StudenceAttendence> {
                           return SizedBox(height: 15,);
                         },
                             itemCount: myList.length),
-
+                       // Image.asset(UtilsImage.BOTTOM),
                       ],
+
                     ),
 
                 ],

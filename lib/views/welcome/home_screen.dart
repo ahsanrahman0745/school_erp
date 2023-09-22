@@ -7,6 +7,7 @@ import 'package:school_erp/views/assignment/assignment.dart';
 import 'package:school_erp/views/due_fee/student_fee.dart';
 import 'package:school_erp/views/my_profile/my_profile.dart';
 import 'package:school_erp/views/play%20quiz/play_quiz.dart';
+import 'package:school_erp/views/result/result.dart';
 
 import '../attendenc/attence.dart';
 import '../time_table/time_table.dart';
@@ -199,6 +200,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   else if(myGridList[index]["title"]==myGridList[3]["title"]){
                                     Navigator.push(context,
                                     MaterialPageRoute(builder: (context)=> TimeTable()),
+                                    );
+                                  }
+                                  else if(myGridList[index]["title"]==myGridList[4]["title"]) {
+                                    Navigator.push(context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Result()),
                                     );
                                   }
                                 },
