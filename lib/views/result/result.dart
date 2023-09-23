@@ -151,41 +151,69 @@ class _ResultState extends State<Result> {
                       SizedBox(
                         height: 20,
                       ),
+
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(color: Colors.grey),
                         ),
                         margin: EdgeInsets.all(10),
-                        padding: EdgeInsets.all(10),
-                        child: ListView.builder(
-                            shrinkWrap: true,
-                            itemBuilder: (context,index){
-                              return Row(
 
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                               children: [
-                                 Text(mySubject[index]["subject"],style: TextStyle(fontSize: 15,
-                                     color: Colors.black),),
+                        child: Row(
+                          children: [
+                            Expanded(
+                                flex: 7,
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  child:  ListView.builder(
+                                      shrinkWrap: true,
+                                      itemBuilder: (context,index){
+                                        return  Text(mySubject[index]["subject"],style: TextStyle(fontSize: 15,
+                                            color: Colors.black),);
+                                      },
 
-                                 Container(
-                                   color: Colors.blueGrey,
-                                   child: Row(
-                                     children: [
-                                       Text(mySubject[index]["totalMarks"],style: TextStyle(fontSize: 15,
-                                           color: Colors.black),),
-                                   SizedBox(width: 10,),
-                                       Text("${mySubject[index]["obtainedMarks"]}  -  ${mySubject[index]["grade"]}",style: TextStyle(fontSize: 15,
-                                           color: Colors.black),),
-                                     ],
-                                   ),
-                                 )
-                               ],
-                              );
-                            },
+                                      itemCount: mySubject.length),
+                                )),
+                            Expanded(
+                                flex: 3,
+                                child: Container(alignment: Alignment.center,
+                                  padding: EdgeInsets.all(10),
+                                  color: Color(0xFFE6EFFF),
+                                  child:  ListView.builder(
+                                      shrinkWrap: true,
+                                      itemBuilder: (context,index){
+                                        return  Text(
+                                          mySubject[index]["totalMarks"],
+                                          textAlign: TextAlign.center,style: TextStyle(fontSize: 15,
 
-                            itemCount: mySubject.length),
+                                            color: Colors.black),);
+                                      },
+
+                                      itemCount: mySubject.length),
+                                )),
+                            Expanded(
+                                flex: 3,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xFFCEE8C9),
+                                      borderRadius: BorderRadius.only(topRight: Radius.circular(15),bottomRight: Radius.circular(15))
+                                  ),
+                                  child:  ListView.builder(
+                                      shrinkWrap: true,
+                                      itemBuilder: (context,index){
+                                        return  Text("${mySubject[index]["obtainedMarks"]}  - ${mySubject[index]["grade"]}", textAlign: TextAlign.center,style: TextStyle(fontSize: 15,
+                                            color: Colors.black),);
+                                      },
+
+                                      itemCount: mySubject.length),
+                                )),
+                          ],
+                        ),
                       ),
+
+
                     ],
                   ),
                 ),

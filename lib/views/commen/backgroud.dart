@@ -22,7 +22,10 @@ class Background extends StatelessWidget {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [primeryColor, primeryColor2])),
+              // gradient: LinearGradient(colors: [primeryColor, primeryColor2])
+
+              color: primeryColor
+               ),
           child: Stack(
             children: [
               Container(
