@@ -101,9 +101,14 @@ class _ResultState extends State<Result> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.arrow_back_ios_new,
-                          color: Colors.white,
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios_new,
+                            color: Colors.white,
+                          ),
                         ),
                         Icon(
                           Icons.share,
@@ -149,7 +154,7 @@ class _ResultState extends State<Result> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 5,
                       ),
 
                       Container(
@@ -208,16 +213,37 @@ class _ResultState extends State<Result> {
                                       },
 
                                       itemCount: mySubject.length),
-                                )),
+                                ),
+                            ),
+                          ],
+                        ),
+                      ),
+                          SizedBox(height: 10,),
+                      Container( width:250,
+                        alignment: Alignment.center,
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        decoration:BoxDecoration(borderRadius: BorderRadius.circular(10) ,color: primeryColor) ,
+                        child: Row(
+                          children: [
+                            Text("DOWNLOAD PDF", style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white,),
+                            ),
+                            SizedBox(width: 20,),
+                            Icon(Icons.picture_as_pdf, color: Colors.white,),
                           ],
                         ),
                       ),
 
+                      SizedBox(height: 6,),
+                      Image.asset(UtilsImage.BOTTOM)
 
                     ],
                   ),
                 ),
-              )
-            ])));
+              ),
+                ]
+                ),
+        ),
+    );
   }
 }
