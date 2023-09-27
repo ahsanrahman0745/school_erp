@@ -4,10 +4,12 @@ import 'package:school_erp/utill/MyTestStyle.dart';
 import 'package:school_erp/utill/colors_picker.dart';
 import 'package:school_erp/utill/utils_image.dart';
 import 'package:school_erp/views/assignment/assignment.dart';
+import 'package:school_erp/views/change_pass/change_password.dart';
+import 'package:school_erp/views/date_sheet/date_sheet.dart';
 import 'package:school_erp/views/due_fee/student_fee.dart';
 import 'package:school_erp/views/my_profile/my_profile.dart';
 import 'package:school_erp/views/play%20quiz/play_quiz.dart';
-import 'package:school_erp/views/result/result.dart';
+import 'package:school_erp/views/school_gallery/school_gallery.dart';
 
 import '../attendenc/attence.dart';
 import '../time_table/time_table.dart';
@@ -202,10 +204,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                     MaterialPageRoute(builder: (context)=> TimeTable()),
                                     );
                                   }
-                                  else if(myGridList[index]["title"]==myGridList[4]["title"]) {
+
+                                  else if(myGridList[index]["title"]==myGridList[5]["title"]) {
                                     Navigator.push(context,
                                       MaterialPageRoute(
-                                          builder: (context) => Result()),
+                                          builder: (context) => DateSheet()),
+                                    );
+                                  }
+                                  else if(myGridList[index]["title"]==myGridList[7]["title"]) {
+                                    Navigator.push(context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SchoolGallery()),
+                                    );
+                                  }
+                                  else if(myGridList[index]["title"]==myGridList[9]["title"]) {
+                                    Navigator.push(context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ChangePass()),
                                     );
                                   }
                                 },

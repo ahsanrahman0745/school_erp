@@ -31,6 +31,14 @@ class UtilsImage {
   static final String TOP_BACK = "asset/png/top.jpeg";
   static final String VECTOR = "asset/png/Vector.png";
   static final String BOTTOM = "asset/png/bottom.png";
+  static final String FIRST_GI = "asset/png/firstgi.png";
+  static final String SECOND_GI = "asset/png/secondgi.png";
+  static final String THIRD_GI = "asset/png/thirdgi.png";
+  static final String FOURTH_GI = "asset/png/fourthgi.png";
+  static final String FIFTH_GI = "asset/png/fifthgi.png";
+  static final String SIXTH_GI = "asset/png/sixthgi.png";
+  static final String SEVENTH_GI = "asset/png/seventhgi.png";
+  static final String EIGTH_GI = "asset/png/eigthgi.png";
 
 
   static final String CLENDER_IMAGE = "asset/png/vector.png";
